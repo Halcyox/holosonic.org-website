@@ -1,0 +1,16 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd holosonic && npm install
+    build:
+      commands:
+        - cd holosonic && npm run build
+  artifacts:
+    baseDirectory: holosonic/build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - holosonic/node_modules/**/*
