@@ -3,14 +3,15 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cd holosonic && npm install
+        - cd holosonic
+        - npm install
     build:
       commands:
-        - cd holosonic && npm run build
+        - npm run build
   artifacts:
-    baseDirectory: holosonic/build
+    baseDirectory: holosonic/build  # Change this to your actual build output folder
     files:
       - '**/*'
   cache:
     paths:
-      - holosonic/node_modules/**/*
+      - node_modules/**/*
