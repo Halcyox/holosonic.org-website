@@ -1,0 +1,105 @@
+/* App.css */
+
+/* Unleash the Cosmic Aesthetics */
+
+/* Global Styles */
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0e0e0e;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Header Styles */
+.hero {
+  background: radial-gradient(circle, #1a1a1a 30%, #000);
+  text-align: center;
+  padding: 5rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #0073e6;
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid #0073e6;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #005bb7;
+  border-color: #005bb7;
+}
+
+/* Feature Highlights Section Styles */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.feature {
+  flex: 1;
+  max-width: 300px;
+  margin: 1rem;
+  padding: 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.feature img {
+  max-width: 100px;
+  height: auto;
+}
+
+.feature h2 {
+  font-size: 1.8rem;
+  margin: 1rem 0;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.feature p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* Call to Action Section Styles */
+.cta {
+  text-align: center;
+  padding: 5rem 0;
+  background: radial-gradient(circle, #1a1a1a 30%, #000);
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Footer Styles (You can add a footer section if needed) */
+
+/* Embrace the mystique of the cosmos with these ethereal styles. */
