@@ -139,8 +139,8 @@ function App() {
             {/* Rotating and Pulsating Cube */}
             <RotatingPulsatingParticleSwarm />
           </Canvas>
-          <h1>Welcome to Holosonic</h1>
-          <p>Pioneering holographic sound fields to animate particles in midair.</p>
+          <h1>Holosonic: Breathing Life into Sound</h1>
+          <p>Sculpting soundwaves to craft the unseen.</p>
           <a href="#products" className="cta-button">Explore our Products</a>
         </div>
       </header>
