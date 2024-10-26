@@ -125,7 +125,6 @@ function RotatingPulsatingParticleSwarm() {
   );
 }
 
-
 function App() {
   return (
     <div className="App">
@@ -135,45 +134,52 @@ function App() {
             {/* Camera and Lights */}
             <ambientLight intensity={0.5} />
             <pointLight position={[10, 10, 10]} intensity={1} />
-            
-            {/* Rotating and Pulsating Cube */}
+
+            {/* Rotating and Pulsating Particle Swarm */}
             <RotatingPulsatingParticleSwarm />
           </Canvas>
-          <h1>Holosonic: Breathing Life into Sound</h1>
-          <p>Sculpting soundwaves to craft the unseen.</p>
-          <a href="#products" className="cta-button">Explore our Products</a>
+          <h1>Holosonic: Shaping Matter with Sound</h1>
+          <p>Revolutionizing manipulation of particles through advanced acoustic levitation.</p>
+          {/* <a href="#products" className="cta-button">
+            Discover Our Technology
+          </a> */}
         </div>
       </header>
 
       {/* Feature Highlights */}
       <section className="features">
         <div className="feature">
-          <Sphere args={[0.5, 32, 32]} position={[1, 0, 0]} castShadow>
-            <meshStandardMaterial attach="material" color="orange" />
-          </Sphere>
-          <h2>Immersive Sound</h2>
-          <p>Experience sound like never before with our holographic technology.</p>
+          {/* Image or 3D model representing acoustic levitation */}
+          {/* <img src="images/acoustic-levitation.png" alt="3D Acoustic Levitation" /> */}
+          <h2>3D Acoustic Levitation</h2>
+          <p>
+            Experience the breakthrough in manipulating particles in mid-air with arbitrary configurations.
+          </p>
         </div>
         <div className="feature">
-          <Plane args={[1, 1, 10, 10]} position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
-            <meshStandardMaterial attach="material" color="green" />
-          </Plane>
-          <h2>Particle Animation</h2>
-          <p>Watch particles come to life in midair with our cutting-edge systems.</p>
+          {/* Image or 3D model representing precision manufacturing */}
+          {/* <img src="images/precision-manufacturing.png" alt="Precision Manufacturing" /> */}
+          <h2>Precision Manufacturing</h2>
+          <p>
+            Overcoming traditional manufacturing limits by crafting complex structures without physical contact.
+          </p>
         </div>
         <div className="feature">
-          <Sphere args={[0.5, 32, 32]} position={[-1, 0, 0]} castShadow>
-            <meshStandardMaterial attach="material" color="purple" />
-          </Sphere>
-          <h2>Global Streaming</h2>
-          <p>Stream our holographic sound fields from anywhere in the world.</p>
+          {/* Image or 3D model representing synthetic biology */}
+          {/* <img src="images/synthetic-biology.png" alt="Synthetic Biology Applications" /> */}
+          <h2>Synthetic Biology Applications</h2>
+          <p>
+            Enabling advanced cell patterning and tissue engineering through gentle, precise manipulation.
+          </p>
         </div>
       </section>
 
       {/* Call to Action */}
       <section className="cta">
-        <h2>Ready to experience the future of sound?</h2>
-        <a href="#contact" className="cta-button">Contact Us</a>
+        <h2>Ready to Explore the Possibilities?</h2>
+        {/* <a href="#contact" className="cta-button">
+          Get in Touch
+        </a> */}
       </section>
     </div>
   );

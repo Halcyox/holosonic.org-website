@@ -7,47 +7,49 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #0e0e0e;
-  color: #fff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  background-color: #101010; /* Darker shade for a deeper cosmic feel */
+  color: #E0E2E1; /* Soft off-white for better readability */
+  text-shadow: 1px 1px 2px rgba(28, 27, 27, 0.7); /* Sharper text shadow for depth */
 }
 
 /* Header Styles */
 .hero {
-  background: radial-gradient(circle, #1a1a1a 30%, #000);
+  background: radial-gradient(circle, #282828 30%, #000000 70%); /* Enhanced gradient for visual depth */
   text-align: center;
   padding: 5rem 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Deeper shadow for 3D effect */
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
+  font-size: 3.5rem; /* Larger font for impact */
+  color: #FFD700; /* Gold color for a touch of luxury */
+  margin-bottom: 0.5rem; /* Tighter line-spacing */
+  letter-spacing: 3px; /* More spacing for elegance */
   text-transform: uppercase;
 }
 
 .hero p {
-  font-size: 1.5rem;
+  font-size: 1.6rem; /* Slightly larger for emphasis */
+  color: #CCCCCC; /* Lighter grey for contrast */
   margin-bottom: 2rem;
-  font-weight: 300;
+  font-weight: 400; /* Lighter weight for a refined look */
 }
 
 .cta-button {
   display: inline-block;
-  padding: 1rem 2rem;
-  background-color: #0073e6;
-  color: #fff;
+  padding: 1rem 2.5rem; /* More padding for a bigger button */
+  background-color: #4A90E2; /* Softer blue for a modern look */
+  color: #FFFFFF;
   text-decoration: none;
-  border: 2px solid #0073e6;
+  border: none; /* Remove border for a cleaner look */
   border-radius: 5px;
   font-size: 1.2rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth scaling transition */
 }
 
 .cta-button:hover {
-  background-color: #005bb7;
-  border-color: #005bb7;
+  background-color: #357ABD; /* Darker blue on hover for depth */
+  transform: scale(1.05); /* Slight scale to draw attention */
 }
 
 /* Feature Highlights Section Styles */
@@ -56,6 +58,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   padding: 4rem 0;
+  background: #181818; /* Subtle background to differentiate section */
 }
 
 .feature {
@@ -64,42 +67,50 @@ body {
   margin: 1rem;
   padding: 2rem;
   text-align: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05); /* More transparent for a glass effect */
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Stronger shadow for more depth */
 }
 
 .feature img {
   max-width: 100px;
   height: auto;
+  filter: brightness(0.8); /* Dim images for a sleek look */
 }
 
 .feature h2 {
-  font-size: 1.8rem;
+  font-size: 2rem; /* Bigger for impact */
   margin: 1rem 0;
+  color: #B0BEC5; /* Light blue-grey for a techno feel */
   letter-spacing: 1px;
-  text-transform: capitalize;
 }
 
 .feature p {
-  font-size: 1.2rem;
-  font-weight: 300;
+  font-size: 1.3rem; /* Larger text for readability */
+  color: #D0D0D0; /* Lighter text color for better readability */
+  font-weight: 400; /* Lighter weight for sophistication */
 }
 
 /* Call to Action Section Styles */
 .cta {
   text-align: center;
   padding: 5rem 0;
-  background: radial-gradient(circle, #1a1a1a 30%, #000);
+  background: radial-gradient(circle, #202020 30%, #000000 70%); /* Dark gradient for focus */
 }
 
 .cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-size: 2.8rem; /* Increase size for attention */
+  color: #FFD700; /* Consistent gold color for continuity */
+  margin-bottom: 1.5rem; /* Less space for compact design */
 }
 
-/* Footer Styles (You can add a footer section if needed) */
+/* Footer Styles */
+footer {
+  padding: 2rem 0;
+  background-color: #000; /* Solid color for a definitive end */
+  text-align: center;
+  color: #666; /* Grey for subtlety */
+  font-size: 0.9rem; /* Smaller font for less focus */
+}
 
 /* Embrace the mystique of the cosmos with these ethereal styles. */
