@@ -275,6 +275,129 @@ function AcousticLevitation() {
                 enabling manipulation of particles from {technicalSpecs.particleSizeRange}.
               </p>
 
+              <h3>Acoustic Holography Principles</h3>
+              <p>
+                Acoustic holograms are created by precisely controlling the phase and amplitude of waves 
+                from multiple transducers. The holographic pattern is computed to create a desired 3D 
+                pressure field distribution, similar to optical holography but using sound waves.
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Hologram reconstruction:</div>
+                <BlockMath math="p(\mathbf{r}) = \sum_{n=1}^{N} A_n \frac{e^{ik|\mathbf{r} - \mathbf{r}_n|}}{|\mathbf{r} - \mathbf{r}_n|} e^{i\phi_n}" />
+              </div>
+              
+              <p>
+                Where <InlineMath math="N" /> transducers at positions <InlineMath math="\mathbf{r}_n" /> 
+                emit waves with amplitudes <InlineMath math="A_n" /> and phases <InlineMath math="\phi_n" />. 
+                The complex pressure field <InlineMath math="p(\mathbf{r})" /> is the superposition of 
+                spherical waves from each transducer.
+              </p>
+
+              <h3>Beamforming and Phased Array Mathematics</h3>
+              <p>
+                Phased arrays use constructive and destructive interference to steer and shape acoustic beams. 
+                The beam pattern is determined by the array geometry and phase distribution.
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Array factor (beam pattern):</div>
+                <BlockMath math="AF(\theta, \phi) = \sum_{n=1}^{N} A_n e^{i\mathbf{k} \cdot \mathbf{r}_n + i\phi_n}" />
+              </div>
+              
+              <p>
+                Where <InlineMath math="\mathbf{k}" /> is the wave vector in the direction <InlineMath math="(\theta, \phi)" />. 
+                By adjusting phases <InlineMath math="\phi_n" />, we can steer the main beam and create 
+                multiple simultaneous beams for independent particle control.
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Beam steering phase:</div>
+                <BlockMath math="\phi_n = -k(\mathbf{r}_n \cdot \hat{\mathbf{u}})" />
+              </div>
+              
+              <p>
+                Where <InlineMath math="\hat{\mathbf{u}}" /> is the unit vector in the desired beam direction. 
+                This creates a phase gradient across the array that steers the beam.
+              </p>
+
+              <h3>Nonlinear Acoustic Effects</h3>
+              <p>
+                At high intensities, nonlinear effects become important. The acoustic wave equation becomes 
+                nonlinear, leading to harmonic generation and wave distortion.
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Nonlinear wave equation (simplified):</div>
+                <BlockMath math="\frac{\partial^2 p}{\partial t^2} - c^2 \nabla^2 p = \frac{\beta}{\rho_0 c^2} \frac{\partial^2 p^2}{\partial t^2}" />
+              </div>
+              
+              <p>
+                Where <InlineMath math="\beta" /> is the nonlinearity parameter. This nonlinearity can 
+                enhance radiation forces but also creates unwanted effects like streaming and heating that 
+                must be managed.
+              </p>
+
+              <h3>Viscous and Boundary Layer Effects</h3>
+              <p>
+                Near boundaries and for small particles, viscous effects become important. The acoustic 
+                boundary layer thickness determines when viscous damping affects particle motion.
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Boundary layer thickness:</div>
+                <BlockMath math="\delta = \sqrt{\frac{2\nu}{\omega}}" />
+              </div>
+              
+              <p>
+                Where <InlineMath math="\nu" /> is the kinematic viscosity. For particles smaller than 
+                the boundary layer, viscous drag significantly affects motion and must be included in 
+                force calculations.
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Stokes drag force:</div>
+                <BlockMath math="\mathbf{F}_{\text{drag}} = -6\pi \mu a \mathbf{v}" />
+              </div>
+              
+              <p>
+                Where <InlineMath math="\mu" /> is the dynamic viscosity and <InlineMath math="\mathbf{v}" /> 
+                is the particle velocity relative to the fluid.
+              </p>
+
+              <h3>Time-Averaged vs Instantaneous Forces</h3>
+              <p>
+                Acoustic radiation forces are time-averaged effects. The instantaneous acoustic pressure 
+                oscillates rapidly, but particles respond to the time-averaged force over many acoustic cycles.
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Time-averaged force:</div>
+                <BlockMath math="\langle \mathbf{F} \rangle = \frac{1}{T} \int_0^T \mathbf{F}(t) \, dt" />
+              </div>
+              
+              <p>
+                Where <InlineMath math="T = 2\pi/\omega" /> is the acoustic period. For stable trapping, 
+                the time-averaged force must overcome thermal fluctuations and other disturbances.
+              </p>
+
+              <h3>Multi-Frequency Operation</h3>
+              <p>
+                Operating at multiple frequencies simultaneously enables more complex manipulation. Different 
+                frequencies can create independent pressure fields that interact to form complex 3D patterns.
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Multi-frequency pressure field:</div>
+                <BlockMath math="P(\mathbf{r}, t) = \sum_{m=1}^{M} \sum_{n=1}^{N} A_{mn} \sin(\mathbf{k}_m \cdot \mathbf{r}) \cos(\omega_m t + \phi_{mn})" />
+              </div>
+              
+              <p>
+                Where <InlineMath math="M" /> frequencies <InlineMath math="\omega_m" /> are used, each 
+                with <InlineMath math="N" /> transducer pairs. This enables independent control at different 
+                scales and frequencies, optimizing manipulation for different particle sizes.
+              </p>
+
               <h3>Phased Array Control</h3>
               <p>
                 By controlling the phase <InlineMath math="\phi_i" /> and amplitude <InlineMath math="A_i" /> of each transducer, 
@@ -290,7 +413,8 @@ function AcousticLevitation() {
               <p>
                 The phase control allows us to steer the pressure field by adjusting the relative timing 
                 of waves from different transducers, while amplitude control adjusts the strength of 
-                individual wave components.
+                individual wave components. The combination enables full 3D control of the acoustic field, 
+                creating pressure nodes at arbitrary positions for particle trapping and manipulation.
               </p>
             </CollapsibleSection>
           </section>
