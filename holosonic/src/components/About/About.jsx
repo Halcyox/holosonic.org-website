@@ -11,7 +11,7 @@ function About() {
         <h2>About Holosonic</h2>
         <div className="about-content">
           <p className="about-description">
-            Holosonic is a startup commercializing breakthrough acoustic levitation technology. Founded by researchers Alif Jakir and Sylas Horowitz, we're translating peer-reviewed research into programmable matter systems for manufacturing and synthetic biology. 
+            Holosonic is a startup conducting research and development in the field of SonoPrinting, and commercializing breakthrough acoustic levitation technology. Founded by MIT researchers Alif Jakir and Sylas Horowitz, we're translating peer-reviewed research into programmable matter systems for manufacturing and synthetic biology. 
             (Yes, we're actually using sound to move things around. It's as cool as it sounds.)
           </p>
           <div className="about-founders">
