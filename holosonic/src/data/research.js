@@ -48,7 +48,7 @@ export const researchCitations = {
 export const technicalSpecs = {
   frequencyRange: "20-200 kHz (ultrasonic)",
   particleSizeRange: "10 nm to 5 mm",
-  positioningPrecision: "Sub-10 μm",
+  positioningPrecision: "Sub-10 μm (sub-micron) ",
   penetrationDepth: "Up to centimeters through biological tissue",
   printingSpeed: "Faster than layer-by-layer methods",
   cellViability: "Maintained through gentle acoustic fields"

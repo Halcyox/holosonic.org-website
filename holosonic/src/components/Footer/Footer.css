@@ -36,6 +36,13 @@
   text-decoration: underline;
 }
 
+.footer-contact {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #6b7280;
+  margin: var(--spacing-sm) 0 0 0;
+  line-height: 1.6;
+}
+
 @media (max-width: 768px) {
   .footer {
     padding: var(--spacing-lg) var(--container-padding);

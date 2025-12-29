@@ -33,6 +33,15 @@ function Footer() {
               </a>
               .
             </p>
+            <p className="footer-contact">
+              Contact us if you're interested in investing or wanting to build with us!{' '}
+              <a 
+                href="mailto:alif@superintelligent.group"
+                className="footer-link"
+              >
+                alif@superintelligent.group
+              </a>
+            </p>
           </div>
         </div>
       </div>

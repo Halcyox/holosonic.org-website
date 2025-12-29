@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Citation from '../Citation/Citation';
 import Tooltip from '../Tooltip/Tooltip';
 import './ResearchCard.css';
@@ -40,12 +41,12 @@ function ResearchCard({ title, description, citations = [], learnMoreUrl, learnM
     if (!learnMoreUrl) return null;
 
     const link = (
-      <a 
-        href={learnMoreUrl}
+      <Link 
+        to={learnMoreUrl}
         className="research-link"
       >
         Learn more →
-      </a>
+      </Link>
     );
 
     if (learnMoreTooltip) {
