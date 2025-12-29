@@ -361,7 +361,7 @@ footer p, footer a, footer span {
     height: 250px !important;
     max-width: 250px !important;
     max-height: 250px !important;
-    justify-self: end;
+    justify-self: center;
   }
   
   .hero-content > div:last-child canvas {
