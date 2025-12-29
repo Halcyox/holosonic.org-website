@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BlockMath, InlineMath } from 'react-katex';
 import Citation from '../components/Citation/Citation';
 import Footer from '../components/Footer/Footer';
+import VisualizationContainer from '../components/Visualizations/VisualizationContainer';
+import MultiParticleDemo from '../components/Visualizations/MultiParticleDemo';
+import CollapsibleSection from '../components/CollapsibleSection/CollapsibleSection';
 import { researchCitations, technicalSpecs } from '../data/research';
 import './TechnologyPage.css';
 
@@ -57,6 +61,238 @@ function AcousticLevitation() {
               acoustic manipulation works through optically opaque materials, opening possibilities for 
               in-material fabrication and deep-tissue applications.
             </p>
+
+            <CollapsibleSection title="Physics & Mathematics">
+              <h3>Standing Wave Formation</h3>
+              <p>
+                Acoustic levitation relies on standing waves created by the interference of acoustic waves. 
+                When two waves of the same frequency travel in opposite directions, they form a standing 
+                wave pattern with fixed nodes (zero displacement) and antinodes (maximum displacement).
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Standing wave equation:</div>
+                <BlockMath math="P(x, t) = A \sin(kx) \cos(\omega t)" />
+              </div>
+              
+              <p>
+                Where:
+              </p>
+              <ul>
+                <li><span className="physics-term"><InlineMath math="P(x, t)" /></span> is the acoustic pressure at position <InlineMath math="x" /> and time <InlineMath math="t" /></li>
+                <li><span className="physics-term"><InlineMath math="A" /></span> is the amplitude of the wave</li>
+                <li><span className="physics-term"><InlineMath math="k = 2\pi/\lambda" /></span> is the wave number (spatial frequency), where <InlineMath math="\lambda" /> is the wavelength</li>
+                <li><span className="physics-term"><InlineMath math="\omega = 2\pi f" /></span> is the angular frequency, where <InlineMath math="f" /> is the frequency in Hz</li>
+                <li><span className="physics-term"><InlineMath math="x" /></span> is the spatial position</li>
+                <li><span className="physics-term"><InlineMath math="t" /></span> is time</li>
+              </ul>
+
+              <h3>Pressure Nodes and Antinodes</h3>
+              <p>
+                Pressure nodes occur where sin(kx) = 0, creating regions of zero acoustic pressure. 
+                Particles are trapped at these nodes due to acoustic radiation forces. Antinodes occur 
+                where sin(kx) = ±1, creating regions of maximum pressure variation.
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Node positions:</div>
+                <BlockMath math="x_{\text{node}} = \frac{n\lambda}{2}, \quad \text{where } n = 0, 1, 2, 3, \ldots" />
+              </div>
+
+              <h3>3D Pressure Field Generation</h3>
+              <p>
+                Multiple phased array transducers create complex 3D pressure fields by combining waves 
+                from different directions. The total pressure field is the superposition of waves from 
+                orthogonal and diagonal transducer pairs.
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">3D pressure field:</div>
+                <BlockMath math="P(x, y, z, t) = \sum_{i} A_i \sin(\mathbf{k}_i \cdot \mathbf{r}) \cos(\omega_i t + \phi_i)" />
+              </div>
+              
+              <p>
+                Where:
+              </p>
+              <ul>
+                <li><span className="physics-term"><InlineMath math="\mathbf{r} = (x, y, z)" /></span> is the position vector</li>
+                <li><span className="physics-term"><InlineMath math="\mathbf{k}_i" /></span> is the wave vector for transducer pair <InlineMath math="i" /></li>
+                <li><span className="physics-term"><InlineMath math="\phi_i" /></span> is the phase offset, controlled to shape the field</li>
+                <li>The summation includes waves from X, Y, Z, and diagonal transducer pairs</li>
+              </ul>
+
+              <h3>Acoustic Radiation Force</h3>
+              <p>
+                Particles are trapped and manipulated by acoustic radiation forces. For small particles 
+                (much smaller than the wavelength), the primary radiation force is given by the Gor'kov 
+                potential, which depends on the pressure and velocity fields.
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Gor'kov potential (simplified):</div>
+                <BlockMath math="U = V_p \left[ \frac{f_1 \langle p^2 \rangle}{2\rho c^2} - \frac{3}{4} f_2 \rho \langle v^2 \rangle \right]" />
+              </div>
+              
+              <p>
+                Where:
+              </p>
+              <ul>
+                <li><span className="physics-term"><InlineMath math="U" /></span> is the potential energy</li>
+                <li><span className="physics-term"><InlineMath math="V_p" /></span> is the particle volume</li>
+                <li><span className="physics-term"><InlineMath math="f_1, f_2" /></span> are compressibility and density contrast factors</li>
+                <li><span className="physics-term"><InlineMath math="p" /></span> is the acoustic pressure</li>
+                <li><span className="physics-term"><InlineMath math="v" /></span> is the acoustic velocity</li>
+                <li><span className="physics-term"><InlineMath math="\rho" /></span> is the fluid density</li>
+                <li><span className="physics-term"><InlineMath math="c" /></span> is the speed of sound</li>
+                <li>The angle brackets <InlineMath math="\langle \rangle" /> denote time-averaged quantities</li>
+              </ul>
+
+              <p>
+                Particles move toward regions of minimum potential energy, which correspond to pressure 
+                nodes in standing wave fields. The radiation force is derived from the gradient of this potential:
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Radiation force:</div>
+                <BlockMath math="\mathbf{F} = -\nabla U" />
+              </div>
+
+              <h3>Primary and Secondary Radiation Forces</h3>
+              <p>
+                Acoustic radiation forces can be categorized into primary and secondary forces. The primary 
+                radiation force (Gor'kov force) acts on particles due to the acoustic field itself, while 
+                secondary forces arise from acoustic streaming and other nonlinear effects.
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Primary radiation force (full Gor'kov expression):</div>
+                <BlockMath math="\mathbf{F}_{\text{primary}} = -\nabla \left[ V_p \left( \frac{f_1 \langle p^2 \rangle}{2\rho_0 c_0^2} - \frac{3\rho_0 f_2 \langle v^2 \rangle}{4} \right) \right]" />
+              </div>
+              
+              <p>
+                Where the contrast factors are:
+              </p>
+              <ul>
+                <li><span className="physics-term"><InlineMath math="f_1 = 1 - \frac{\rho_0 c_0^2}{\rho_p c_p^2}" /></span> (compressibility contrast)</li>
+                <li><span className="physics-term"><InlineMath math="f_2 = \frac{2(\rho_p - \rho_0)}{2\rho_p + \rho_0}" /></span> (density contrast)</li>
+                <li>Subscript <InlineMath math="0" /> refers to the fluid medium, <InlineMath math="p" /> refers to the particle</li>
+              </ul>
+
+              <h3>Acoustic Streaming</h3>
+              <p>
+                Acoustic streaming is a steady fluid flow induced by acoustic waves. It occurs due to 
+                nonlinear effects and viscous dissipation in the acoustic boundary layer. Streaming can 
+                create secondary forces on particles and is particularly important in microfluidic applications.
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Acoustic streaming velocity (simplified):</div>
+                <BlockMath math="\mathbf{v}_s = \frac{1}{4\rho_0 c_0^2} \left( \frac{1}{\omega} \nabla \langle p^2 \rangle - \frac{2}{\omega^2} \nabla \cdot \langle \mathbf{v} \mathbf{v} \rangle \right)" />
+              </div>
+              
+              <p>
+                Streaming can enhance particle manipulation by creating additional flow patterns that 
+                assist in positioning and transport. However, it can also cause unwanted particle motion 
+                that must be accounted for in precise manipulation systems.
+              </p>
+
+              <h3>Particle Size Regimes</h3>
+              <p>
+                The behavior of particles in acoustic fields depends on their size relative to the acoustic 
+                wavelength. Different physical models apply in different regimes:
+              </p>
+              
+              <ul>
+                <li><strong>Rayleigh regime</strong> (<InlineMath math="a \ll \lambda" />, where <InlineMath math="a" /> is particle radius): 
+                  Gor'kov potential applies. Particles behave as point scatterers.</li>
+                <li><strong>Mie regime</strong> (<InlineMath math="a \sim \lambda" />): 
+                  Full scattering theory required. Multiple scattering modes become important.</li>
+                <li><strong>Geometric regime</strong> (<InlineMath math="a \gg \lambda" />): 
+                  Ray acoustics approximation. Particles experience forces from direct pressure gradients.</li>
+              </ul>
+              
+              <p>
+                For our frequency range of {technicalSpecs.frequencyRange}, wavelengths range from 
+                approximately 1.7 mm (200 kHz in air) to 0.75 mm (2 MHz in water), enabling manipulation 
+                of particles from {technicalSpecs.particleSizeRange} across multiple regimes.
+              </p>
+
+              <h3>Acoustic Impedance and Reflection</h3>
+              <p>
+                Acoustic impedance determines how acoustic waves interact with boundaries and particles. 
+                The impedance mismatch between particle and medium affects the radiation force magnitude 
+                and direction.
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Acoustic impedance:</div>
+                <BlockMath math="Z = \rho c = \frac{p}{v}" />
+              </div>
+              
+              <p>
+                Where <InlineMath math="Z" /> is the specific acoustic impedance. For effective levitation, 
+                particles typically have different acoustic properties (density and/or compressibility) 
+                than the surrounding medium, creating the contrast factors <InlineMath math="f_1" /> and <InlineMath math="f_2" /> 
+                in the Gor'kov potential.
+              </p>
+
+              <h3>Force Magnitude and Scaling</h3>
+              <p>
+                The magnitude of the acoustic radiation force scales with several key parameters:
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Force scaling:</div>
+                <BlockMath math="F \propto V_p \frac{p_0^2}{\rho_0 c_0^2} \frac{a}{\lambda} f(\rho, \kappa)" />
+              </div>
+              
+              <p>
+                Where <InlineMath math="p_0" /> is the pressure amplitude and <InlineMath math="f(\rho, \kappa)" /> 
+                is a function of density and compressibility contrasts. This shows that:
+              </p>
+              <ul>
+                <li>Force increases with particle volume <InlineMath math="V_p" /></li>
+                <li>Force scales with pressure squared <InlineMath math="p_0^2" /></li>
+                <li>Force depends on the size-to-wavelength ratio <InlineMath math="a/\lambda" /></li>
+                <li>Material properties determine the contrast factors</li>
+              </ul>
+
+              <h3>Frequency and Wavelength Relationship</h3>
+              <p>
+                The relationship between frequency, wavelength, and the speed of sound determines the 
+                spatial resolution of the pressure field and the size of particles that can be manipulated.
+              </p>
+              
+              <div className="equation">
+                <div className="equation-label">Wave equation:</div>
+                <BlockMath math="c = f\lambda = \frac{\omega}{k}" />
+              </div>
+              
+              <p>
+                Where <span className="physics-term"><InlineMath math="c" /></span> is the speed of sound (approximately 343 m/s in air, 
+                1500 m/s in water). For our frequency range of {technicalSpecs.frequencyRange}, this gives 
+                wavelengths from approximately 1.7 mm (at 200 kHz in air) down to 0.75 mm (at 2 MHz in water), 
+                enabling manipulation of particles from {technicalSpecs.particleSizeRange}.
+              </p>
+
+              <h3>Phased Array Control</h3>
+              <p>
+                By controlling the phase <InlineMath math="\phi_i" /> and amplitude <InlineMath math="A_i" /> of each transducer, 
+                we can dynamically shape and move pressure fields in real-time. This enables:
+              </p>
+              <ul>
+                <li>Independent control of multiple particles simultaneously</li>
+                <li>Real-time repositioning of trapped objects</li>
+                <li>Creation of complex 3D patterns and structures</li>
+                <li>Precise manipulation with {technicalSpecs.positioningPrecision} accuracy</li>
+              </ul>
+
+              <p>
+                The phase control allows us to steer the pressure field by adjusting the relative timing 
+                of waves from different transducers, while amplitude control adjusts the strength of 
+                individual wave components.
+              </p>
+            </CollapsibleSection>
           </section>
 
           <section className="technology-section">
@@ -65,6 +301,14 @@ function AcousticLevitation() {
               Based on current research and our development roadmap, we're working toward systems with 
               the following capabilities:
             </p>
+            
+            <VisualizationContainer 
+              height="400px"
+              caption="Interactive demonstration: Four particles moving independently along different 3D paths, demonstrating simultaneous multi-object manipulation. Rotate and zoom to explore."
+            >
+              <MultiParticleDemo />
+            </VisualizationContainer>
+            
             <ul className="capabilities-list">
               <li><strong>Multi-object manipulation:</strong> Simultaneous control of multiple particles with independent 3D positioning</li>
               <li><strong>Broad size range:</strong> Manipulation from {technicalSpecs.particleSizeRange}—spanning from nanoparticles to macroscopic objects</li>

@@ -1,0 +1,146 @@
+.collapsible-section {
+  margin: var(--spacing-lg) 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+}
+
+.collapsible-header {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: rgba(255, 255, 255, 0.03);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Geist', sans-serif;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.collapsible-header:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #40e0d0;
+}
+
+.collapsible-header:focus {
+  outline: 2px solid #40e0d0;
+  outline-offset: -2px;
+}
+
+.collapsible-title {
+  flex: 1;
+}
+
+.collapsible-icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #40e0d0;
+  transition: transform 0.3s ease;
+  line-height: 1;
+  min-width: 24px;
+  text-align: center;
+}
+
+.collapsible-content {
+  padding: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 2000px;
+  }
+}
+
+/* Math/equation styling */
+.collapsible-content .equation {
+  background: rgba(64, 224, 208, 0.1);
+  border-left: 3px solid #40e0d0;
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  border-radius: 4px;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.collapsible-content .equation .katex {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.collapsible-content .equation .katex-display {
+  margin: 0;
+}
+
+.collapsible-content .equation-label {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  font-style: italic;
+  margin-bottom: var(--spacing-sm);
+  text-align: center;
+}
+
+.collapsible-content .equation-inline {
+  display: inline;
+  margin: 0 0.2em;
+}
+
+.collapsible-content .equation-inline .katex {
+  font-size: 1.1em;
+  color: #40e0d0;
+}
+
+.collapsible-content .physics-term {
+  font-weight: 600;
+  color: #40e0d0;
+}
+
+.collapsible-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.collapsible-content ul li {
+  padding: var(--spacing-xs) 0;
+  padding-left: var(--spacing-lg);
+  position: relative;
+}
+
+.collapsible-content ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #40e0d0;
+  font-size: 1.2em;
+  line-height: 0.8;
+}
+
+@media (max-width: 768px) {
+  .collapsible-header {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 1rem;
+  }
+
+  .collapsible-content {
+    padding: var(--spacing-md);
+  }
+
+  .collapsible-content .equation {
+    font-size: 0.95rem;
+    padding: var(--spacing-sm);
+  }
+}
+

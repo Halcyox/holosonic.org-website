@@ -34,7 +34,7 @@ function Footer() {
               .
             </p>
             <p className="footer-contact">
-              Contact us if you're interested in investing or wanting to build with us!{' '}
+              Contact us if you're interested in investing or wanting to build with us! {' '}<br/>
               <a 
                 href="mailto:alif@superintelligent.group"
                 className="footer-link"

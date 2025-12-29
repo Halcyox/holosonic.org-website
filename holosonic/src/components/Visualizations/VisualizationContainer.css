@@ -1,0 +1,33 @@
+.visualization-container {
+  width: 100%;
+  margin: var(--spacing-xl) 0;
+}
+
+.visualization-canvas {
+  width: 100%;
+  background: rgba(10, 14, 39, 0.5);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.visualization-caption {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  text-align: center;
+  margin-top: var(--spacing-sm);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .visualization-container {
+    margin: var(--spacing-lg) 0;
+  }
+
+  .visualization-caption {
+    font-size: 0.85rem;
+  }
+}
+
