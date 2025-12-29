@@ -9,9 +9,9 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: holosonic/build  # Change this to your actual build output folder
+    baseDirectory: holosonic/dist
     files:
       - '**/*'
   cache:
     paths:
-      - node_modules/**/*
+      - holosonic/node_modules/**/*
