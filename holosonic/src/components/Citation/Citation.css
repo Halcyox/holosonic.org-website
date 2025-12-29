@@ -1,0 +1,56 @@
+.citation {
+  font-size: 0.75em;
+  font-weight: 600;
+  color: #40e0d0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  vertical-align: baseline;
+  margin-left: 2px;
+}
+
+.citation:hover {
+  color: #2db8a8;
+}
+
+.citation-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.citation-link:hover .citation {
+  color: #2db8a8;
+}
+
+/* Citation tooltip styling */
+.citation-tooltip {
+  text-align: left;
+}
+
+.citation-tooltip-title {
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.citation-tooltip-authors {
+  color: #b4bcc8;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.citation-tooltip-journal {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.citation-tooltip-link {
+  color: #40e0d0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(64, 224, 208, 0.2);
+}
+
